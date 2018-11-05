@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+<head>
+
+    <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}" >
+
+<title>Edit Work </title>
+</head>
+<h1>Create a Work </h1>
+<form method="POST">
+{% csrf_token %}
+
+    <table id="work">
+  <tr>
+      <th> ID </th>
+    <th>Gövde Boyutu</th>
+    <th>Mil Boyutu</th>
+      <th>Keçe Boyutu</th>
+    <th>Pul Boyutu</th>
+      <th>O-ring Boyutu</th>
+      <th>Add Work</th>
+
+  </tr>
+  <tr>
+      <td>{{ post.id }}</td>
+    <td>Gövde : <select name="govde">
+    <option value="kucuk">Küçük Boyut</option>
+    <option value="normal">Normal Boyut</option>
+    <option value="büyük">Büyük Boyut</option>
+</select><br/></td>
+
+    <td>Mil : <select name="mil">
+    <option value="V1">V1</option>
+    <option value="V2">V2</option>
+    <option value="V3">V3</option>
+    <option value="V4">V4</option>
+    <option value="V5">V5</option>
+    <option value="V6">V6</option>
+    <option value="V7">V7</option>
+    <option value="V8">V8</option>
+</select><br/></td>
+
+      <td>Keçe :<select name="kece">
+    <option value="kucuk">Küçük Boyut</option>
+    <option value="normal">Normal Boyut</option>
+</select><br/></td>
+
+    <td>Pul :<select name="pul">
+    <option value="kucuk">Küçük Boyut</option>
+    <option value="normal">Normal Boyut</option>
+</select><br/></td>
+
+      <td>O-Ring :<select name="oring">
+    <option value="kucuk">Küçük Boyut</option>
+    <option value="normal">Normal Boyut</option>
+</select><br/></td>
+      <td>
+      <input type="submit" value="Edit"/>
+</td>
+
+  </tr>
+
+</table>
+
+
+</form>

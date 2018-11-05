@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/create.css' %}" >
+
+
+    <meta charset="UTF-8">
+    <title>Create Wrok</title>
+</head>
+<body>
+
+
+<h1>Create a Work </h1>
+<form action="" method="POST">
+{% csrf_token %}
+
+    <table id="work">
+  <tr>
+
+    <th>Mil Boyutu</th>
+      <th>Gövde Boyutu</th>
+      <th>Keçe Boyutu</th>
+    <th>Pul Boyutu</th>
+      <th>O-ring Boyutu</th>
+      <th>Get Part</th>
+
+  </tr>
+  <tr>
+      <td>Mil : <select name="mil">
+    <option value="V1D">V1D</option>
+    <option value="V2">V2</option>
+    <option value="V3">V3</option>
+    <option value="V4">V4</option>
+    <option value="V5">V5</option>
+    <option value="V6">V6</option>
+    <option value="V7">V7</option>
+    <option value="V8">V8</option>
+</select><br/></td>
+
+
+    <td>{{ V1D.0 }}</td>
+    <td>{{ V1D.1 }}</td>
+    <td>{{ V1D.2 }}</td>
+    <td>{{ V1D.3 }}</td>
+
+      <td>
+      <input type="submit" value="Details"/>
+</td>
+
+  </tr>
+
+</table>
+
+
+</form>
+
+<form action="" method="POST">
+{% csrf_token %}
+    <tr>
+        <button name="AddWork" type="submit">Add This Work in List</button>
+    </tr>
+
+
+    </form>
+
+
+
+
+
+
+
+<ul class="cards">
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image V1"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V1</div>
+        <p class="card__text">In this type, piston has SC-1 body, M-type shaft size, S-Felt and small type of O-ring </p>
+        <button name="V1" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+
+
+    <li class="cards__item">
+    <div class="card">
+      <div class="card__image V2"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V2</div>
+        <p class="card__text">In this type, piston has SC-1 body, F-type shaft size, S-Felt and small type of O-ring </p>
+        <button name="V2" type="submit" class="btn btn--block card__btn">ADD </button>
+      </div>
+    </div>
+  </li>
+
+
+
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image V3"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V3</div>
+        <p class="card__text">In this type, piston has SC-2 body, M-type shaft size, S-Felt and small type of O-ring</p>
+        <button name="V3" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+
+
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image V4"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V4</div>
+        <p class="card__text">In this type, piston has SC-2 body, F-type shaft size, S-Felt and small type of O-ring</p>
+        <button name="V4" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+
+
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image V5"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V5</div>
+        <p class="card__text">In this type, piston has SC-3 body, M-type shaft size, L-Felt and large type of O-ring.</p>
+        <button name="V5" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+
+
+ <li class="cards__item">
+    <div class="card">
+      <div class="card__image V6"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V6</div>
+        <p class="card__text">In this type, piston has SC-3 body, F-type shaft size, L-Felt and large type of O-ring.</p>
+        <button name="V6" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+
+
+ <li class="cards__item">
+    <div class="card">
+      <div class="card__image V7"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V7</div>
+        <p class="card__text">In this type, piston has SC-4 body, M-type shaft size, L-Felt and large type of O-ring.</p>
+        <button name="V7" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+
+
+ <li class="cards__item">
+    <div class="card">
+      <div class="card__image V8"></div>
+      <div class="card__content">
+        <div class="card__title">PRODUCT V8</div>
+        <p class="card__text">In this type, piston has SC-4 body, F-type shaft size, L-Felt and large type of O-ring.</p>
+        <button name="V8" class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
