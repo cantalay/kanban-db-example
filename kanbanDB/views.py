@@ -125,18 +125,21 @@ def createWork(request):
             # post.quantity = request.POST.get('quantity')
             post.save()
             post1 = workOrder1()
+            post1.pk=post.pk
             post1.model_type = request.POST.get('model_type')
             post1.customer_name = request.POST.get('customer_name')
             post1.deadline = request.POST.get('deadline')
             # post1.quantity = request.POST.get('quantity')
             post1.save()
             post2 = workOrder2()
+            post2.pk = post.pk
             post2.model_type = request.POST.get('model_type')
             post2.customer_name = request.POST.get('customer_name')
             post2.deadline = request.POST.get('deadline')
             # post2.quantity = request.POST.get('quantity')
             post2.save()
             post3 = workOrder3()
+            post3.pk = post.pk
             post3.model_type = request.POST.get('model_type')
             post3.customer_name = request.POST.get('customer_name')
             post3.deadline = request.POST.get('deadline')
