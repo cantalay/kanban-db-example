@@ -1,0 +1,73 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/tablet.css' %}" >
+<div id="wrapper">
+
+    <div class="container-fluid">
+            <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Information</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Worker ID:</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{ posts.worker_id }}</h6>
+              <p class="font-weight-bold">Parts of Product</p>
+              <p class="card-text -bold">SC1 Felt</p>
+              <p class="font-weight-bold">Worker Name: </p>
+              <p class="card-text">{{ posts.worker_name }}</p>
+              <p class="font-weight-bold">Station ID: </p>
+              <p class="card-text">21280021</p>
+              <p class="font-weight-bold">Customer Information : </p>
+              <p class="card-text">Hacettepe University </p>
+
+              <a href="https://bootsnipp.com/pradeep330" class="card-link">link</a>
+              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Simulation</h5>
+
+              <span><img class="img-fluid" alt="Responsive image" src="https://blogs.solidworks.com/tech/wp-content/uploads/sites/4/launch.gif" title="this slowpoke moves" /></span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Product Information</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Produced Part: </h6>
+              <p class="card-text"><li>1. Part {{ order.model_type }}</li></p>
+              <p class="card-text"><li>2. Part{{ order.body_type }}</li></p>
+              <p class="card-text"><li>3. Part{{ order.felt_type }}</li></p>
+              <p class="card-text"><li>4. Part{{ order.nut_type }}</li></p>
+              <p class="card-text"><li>5. Part{{ order.spindle_type }}</li></p>
+              <a href="https://bootsnipp.com/pradeep330" class="card-link">link</a>
+              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<script type="text/javascript">
+    window.setTimeout(function () {
+    location.href = "http://172.20.10.6:8000/kanbanDB/tabletScreen3";
+}, 5000);
+</script>
+    </div>
+  </div>

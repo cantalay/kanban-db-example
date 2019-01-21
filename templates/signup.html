@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+    Create User - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1>Signup</h1>
+    {%  if request.user.is_authenticated %}
+        <text> You have already an account!</text>
+    {% else %}
+    <form class="form-control" action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    {% endif %}
+        <input type="submit" value="Signup">
+    </form>
+{% endblock %}
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
