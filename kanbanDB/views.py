@@ -18,6 +18,10 @@ def index(request):
 
 
 def tabletScreen1(request):
+    if 'Stop' in request.POST:
+        status = get_object_or_404(stationInformation, pk=1)
+        status.station_state = False
+        status.save()
     try:
         status = get_object_or_404(stationInformation, pk=1)
         print(status)

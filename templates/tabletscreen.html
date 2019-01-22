@@ -69,5 +69,9 @@
     location.href = "http://10.198.192.60:8000/kanbanDB/tabletScreen1";
 }, 5000);
 </script>
+        <form role="form" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="Stop" value="Stop" class="btn btn-primary btn-block btn-lg" tabindex="7">
+            </form>
     </div>
   </div>
