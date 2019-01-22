@@ -9,7 +9,6 @@ import json
 
 
 def index(request):
-    form = AuthenticationForm()
 
     if request.user.is_authenticated:
         return render(request, 'index.html', {'form': form})
@@ -17,8 +16,13 @@ def index(request):
         return render(request, 'login.html')
 
 
+
 def tabletScreen1(request):
-    status = get_object_or_404(stationInformation, pk=1)
+    try:
+        status = get_object_or_404(stationInformation, pk=1)
+        print(status)
+    except get_object_or_404(stationInformation, pk=1).DoesNotExist:
+        return HttpResponse("No id mached")
     if status.station_state:
         workerPK = status.current_worker
         post = get_object_or_404(workerInformation, pk=workerPK)
