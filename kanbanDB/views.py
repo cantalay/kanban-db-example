@@ -163,7 +163,6 @@ def createWork(request):
         return render(request, 'createWork.html')
 def tabletState(request):
     station = request.GET.get('station')
-    print(station)
     post = get_object_or_404(stationInformation, pk=station)
     print(post.station_state)
     return HttpResponse(post.station_state)
