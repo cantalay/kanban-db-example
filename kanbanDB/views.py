@@ -9,7 +9,7 @@ import json
 
 
 def index(request):
-
+    form = AuthenticationForm()
     if request.user.is_authenticated:
         return render(request, 'index.html', {'form': form})
     else:
@@ -24,10 +24,13 @@ def tabletScreen1(request):
         status.save()
     try:
         status = get_object_or_404(stationInformation, pk=1)
-        print(status)
     except get_object_or_404(stationInformation, pk=1).DoesNotExist:
         return HttpResponse("No id mached")
     if status.station_state:
+        if 'Stop' in request.POST:
+            status = get_object_or_404(stationInformation, pk=1)
+            status.station_state = False
+            status.save()
         workerPK = status.current_worker
         post = get_object_or_404(workerInformation, pk=workerPK)
 
