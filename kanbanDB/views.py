@@ -269,6 +269,7 @@ def elapsedTime(request):
             gets.save()
         if station == "3":
             post = workOrder3.objects.order_by('create_date')
+            lastpost = workOrder.objects.order_by('create_date')
             gets = finishedWork()
             id = post[0].pk
             gets.pk = id
@@ -276,6 +277,7 @@ def elapsedTime(request):
             gets.elapsed_time = request.GET['time']
             gets.work_station = "3"
             post[0].delete()
+            lastpost[0].delete()
             gets.save()
     else:
         return HttpResponse("Something went wrong...")

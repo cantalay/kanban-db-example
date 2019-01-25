@@ -1,66 +1,51 @@
-{% load static %}
-<html>
-<head>
 
-    <link rel="stylesheet" href="{% static 'css/tableStyle.css' %}" >
+{% load static from staticfiles%}
+<link rel="stylesheet" href="{% static 'css/createStyle.css' %}" >
 
-<title>Edit Work </title>
-</head>
-<h1>Create a Work </h1>
-<form method="POST">
-{% csrf_token %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<head></head>
 
-    <table id="work">
-  <tr>
-      <th> ID </th>
-    <th>Gövde Boyutu</th>
-    <th>Mil Boyutu</th>
-      <th>Keçe Boyutu</th>
-    <th>Pul Boyutu</th>
-      <th>O-ring Boyutu</th>
-      <th>Add Work</th>
+<div class="container-md-6" >
 
-  </tr>
-  <tr>
-      <td>{{ post.id }}</td>
-    <td>Gövde : <select name="govde">
-    <option value="kucuk">Küçük Boyut</option>
-    <option value="normal">Normal Boyut</option>
-    <option value="büyük">Büyük Boyut</option>
-</select><br/></td>
+<div class="row">
+    <div class="col-xs-12 col-sm-9 col-md-10 col-sm-offset-9 col-md-offset-1">
+		<form role="form" method="POST">
+            {% csrf_token %}
+			<h2>Create Work Order<small>It's free and always will be.</small></h2>
+			<hr class="colorgraph">
 
-    <td>Mil : <select name="mil">
-    <option value="V1">V1</option>
-    <option value="V2">V2</option>
-    <option value="V3">V3</option>
-    <option value="V4">V4</option>
-    <option value="V5">V5</option>
-    <option value="V6">V6</option>
-    <option value="V7">V7</option>
-    <option value="V8">V8</option>
-</select><br/></td>
+			<div class="form-group">
+				<input type="text"  name="customer_name" id="display_name" class="form-control input-lg" placeholder="Customer Name" tabindex="1">
+			</div>
+			<div class="form-group">
+				<input placeholder="Due Date" class="form-control input-lg" type="text" onfocus="(this.type='date')"  id="date" name="deadline" tabindex="2">
+			</div>
 
-      <td>Keçe :<select name="kece">
-    <option value="kucuk">Küçük Boyut</option>
-    <option value="normal">Normal Boyut</option>
-</select><br/></td>
+			<div class="form-group">
 
-    <td>Pul :<select name="pul">
-    <option value="kucuk">Küçük Boyut</option>
-    <option value="normal">Normal Boyut</option>
-</select><br/></td>
+                    <select name="model_type" class="form-control input-lg" id="selectbasic"  placeholder="Email Address" tabindex="3">
+                        <option hidden >Select Model Type:</option>
+                        <option value="1">SC1</option>
+                        <option value="2">SC2</option>
+                        <option value="3">SC3</option>
+                        <option value="4">SC4</option>
+                        <option value="5">SC5</option>
+                        <option value="6">SC6</option>
+                        <option value="7">SC7</option>
+                        <option value="8">SC8</option>
+                    </select>
 
-      <td>O-Ring :<select name="oring">
-    <option value="kucuk">Küçük Boyut</option>
-    <option value="normal">Normal Boyut</option>
-</select><br/></td>
-      <td>
-      <input type="submit" value="Edit"/>
-</td>
+            </div>
+			<hr class="colorgraph">
+            <hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-md-6"><input type="submit" value="Create Work" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+			</div>
 
-  </tr>
+		</form>
+	</div>
+</div>
 
-</table>
-
-
-</form>
+</div>
